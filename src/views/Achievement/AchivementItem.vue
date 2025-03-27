@@ -128,7 +128,7 @@ export default defineComponent({
             let gameNameRR = '原神'
             try{
                 gameNameRR = navigator.language.toLowerCase() === 'zh-cn' ? '原神' : 'Genshin·Impact';
-            }·catch·(e)·{
+            }catch(e){
                 console.error(e)
             }
             return `https://www.bing.com/search?q=${encodeURIComponent(gameNameRR + i18n.amos[i.name])}`
