@@ -66,30 +66,4 @@ jobs:
         run: mkdir distindex && mv dist/index.json ./distindex/index.json && cp distindex/index.json ./distindex/pre.json
       - name: Check for A/B test
         run: ((git log -1 --pretty=%B | grep -F '[ab]' >/dev/null 2>&1) && rm ./distindex/index.json) || echo "This build will be published FULLY!!"
-      - name: Deploy static files
-        uses: TencentCloud/cos-action@v1
-        with:
-          secret_id: ${{ secrets.COS_ID }}
-          secret_key: ${{ secrets.COS_KEY }}
-          cos_bucket: ${{ secrets.COS_BUCKET }}
-          cos_region: ${{ secrets.COS_REGION }}
-          local_path: dist
-          remote_path: /
-          clean: false
-      - name: Deploy Check
-        if: failure()
-        run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"interactive","card":{"config":{"wide_screen_mode":false},"header":{"template":"red","title":{"content":"构建失败通知","tag":"plain_text"}},"elements":[{"tag":"div","text":{"content":"cocogoat-web构建成功但部署失败，请检查错误信息","tag":"lark_md"}}]}}' ${{ secrets.FEISHU_WEBHOOK }}
-      - name: Deploy index.json
-        uses: TencentCloud/cos-action@v1
-        with:
-          secret_id: ${{ secrets.COS_ID }}
-          secret_key: ${{ secrets.COS_KEY }}
-          cos_bucket: ${{ secrets.COS_BUCKET }}
-          cos_region: ${{ secrets.COS_REGION }}
-          local_path: distindex
-          remote_path: /
-          clean: false
-      - name: Notification
-        run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"interactive","card":{"config":{"wide_screen_mode":false},"header":{"template":"turquoise","title":{"content":"构建成功通知","tag":"plain_text"}},"elements":[{"tag":"div","text":{"content":"cocogoat-web已构建并部署成功","tag":"lark_md"}}]}}' ${{ secrets.FEISHU_WEBHOOK }}
+      
