@@ -125,7 +125,7 @@ export default defineComponent({
     emits: ['input-date', 'input-current', 'input-partial', 'check', 'click-title'],
     setup(props, { emit }) {
         const searchMys = (i: Achievement) => {
-            return `https://www.miyoushe.com/ys/search?keyword=${encodeURIComponent(i18n.amos[i.name])}`
+            return `https://www.bing.com/search?q=${encodeURIComponent(i18n.amos[i.name])}`
         }
         return {
             img,
