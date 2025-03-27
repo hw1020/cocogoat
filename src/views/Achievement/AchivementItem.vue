@@ -126,7 +126,9 @@ export default defineComponent({
     setup(props, { emit }) {
         const searchMys = (i: Achievement) => {
             let gameNameRR = '原神'
-            gameNameRR = navigator.language.toLowerCase() === 'zh-cn' ? '原神' : 'Genshin·Impact'
+            try {
+                gameNameRR = navigator.language.toLowerCase() === 'zh-cn' ? '原神' : 'Genshin·Impact'
+            } catch (e) {}
             return `https://www.bing.com/search?q=${encodeURIComponent(gameNameRR + i18n.amos[i.name])}`
         }
         return {
