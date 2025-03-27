@@ -353,7 +353,7 @@ export default defineComponent({
             small {
                 max-width: calc(100% - 80px);
                 overflow: hidden;
-                white-space: nowrap;
+                white-space: wrap;
                 display: inline-block;
                 text-overflow: ellipsis;
 
