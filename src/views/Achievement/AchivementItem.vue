@@ -131,8 +131,8 @@ export default defineComponent({
                 gameNameRR = navigator.language.toLowerCase() === 'zh-cn' ? '原神' : 'Genshin·Impact'
                 achievement = navigator.language.toLowerCase() === 'zh-cn' ? '成就' : 'achievement'
             } catch (e) {}
-            
-            return `https://www.bing.com/search?q=${encodeURIComponent(`gameNameRR i18n.amos[i.name] achievement`)}`
+            let searchString = `gameNameRR i18n.amos[i.name] achievement`
+            return `https://www.bing.com/search?q=${encodeURIComponent(searchString)}`
         }
         return {
             img,
