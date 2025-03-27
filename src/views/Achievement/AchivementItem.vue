@@ -127,7 +127,7 @@ export default defineComponent({
         const searchMys = (i: Achievement) => {
             let gameNameRR = "原神";
             try{
-                gameNameRR = navigator.language.toLowerCase()=="zh-cn?"原神":"Genshin Impact";
+                gameNameRR = navigator.language.toLowerCase() === "zh-cn" ? "原神" : "Genshin Impact";
             }catch(e){
                 console.error(e);
             }
