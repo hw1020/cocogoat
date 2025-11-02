@@ -57,3 +57,8 @@ Feel free to contribute by creating pull requests or submitting bug reports/feat
  - Build locally: `pnpm build` (webpack)
  - Build as a single file: `pnpm build:singlefile` (Vite)
  - You can specify the toolchain with `:vite` or `:webpack`. We recommend `Vite` for development and `webpack` for deployment after testing.
+
+## changes
+ - achievement name and achievement detail will wrap show when use in mobile device
+ - use www.bing.com search to fix https://www.miyoushe.com/ys/ search fail 
+   
