@@ -341,7 +341,8 @@ export default defineComponent({
 
             .ntxt {
                 display: inline-block;
-                white-space: nowrap;
+                white-space: pre-wrap;
+                word-wrap: break-word;
                 max-width: calc(100% - 140px);
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -360,7 +361,8 @@ export default defineComponent({
             small {
                 max-width: calc(100% - 80px);
                 overflow: hidden;
-                white-space: wrap;
+                white-space: pre-wrap;
+                word-wrap: break-word;
                 display: inline-block;
                 text-overflow: ellipsis;
 
