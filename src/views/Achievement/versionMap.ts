@@ -9,6 +9,10 @@ const versionMap = Object.entries(versionMeta).reduce(
     {} as Record<number, number>,
 )
 export const versionDateMap = {
+    6.5: new Date('2026-04-08'),
+    6.4: new Date('2026-02-25'),
+    6.3: new Date('2026-01-14'),
+    6.2: new Date('2025-12-03'),
     6.1: new Date('2025-10-22'),
     6.0: new Date('2025-09-10'),
     5.7: new Date('2025-06-18'),
